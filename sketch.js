@@ -10,61 +10,72 @@ Word2Vec example with p5.js. Using a pre-trained model on common English words.
 
 let word2Vec;
 
+//Declare all DOM elements
+let submitButton;
+
+let adjective1input;
+let adj1_value;
+let adjective1Result;
+
+let noun1input;
+let noun1Result;
+let noun1_value;
+
+let songLyrics;
+
 function modelLoaded() {
   select('#status').html('Model Loaded');
 }
 
 function setup() {
   noLoop();
-  noCanvas();
+//  noCanvas();
+    createCanvas(windowWidth,windowHeight);
+    songLyrics = select('#lyrics');
+    songLyrics.hide();
 
   // Create the Word2Vec model with pre-trained file of 5000 words
   word2Vec = ml5.word2vec('wordvecs10000.json', modelLoaded);
+    
+    //Initialize all DOM elements
+    nearWordInput = select('#nearword');
+    submitButton = select('#submit');
+    nearResults = select('#results');
+    
+    adjective1input = select('#real');
+    adj1_value = adjective1input.value();
+    adjective1Result = select('#adj1');
+    
+    noun1input = select('#life');
+    noun1_value = noun1input.value();
+    noun1Result = select('#noun1');
 
-  // Select all the DOM elements
-    let nearWordInput = select('#nearword');
-    let nearButton = select('#submit');
-    let nearResults = select('#results');
-    let adjective1input = select('#real');
-    let adjective1Result = select('#adj1');
-    let noun1input = select('#life');
-    let noun1Result = select('#noun1');
+    fillLyrics(submitButton);
+}
 
-  // Finding the nearest words
-  nearButton.mousePressed(() => {
-    let word = nearWordInput.value();
-    let adj1_value = adjective1input.value();
-    let noun1_value = noun1input.value();
-    word2Vec.nearest(word, (error, result) => {
-      let output = '';
-      if (result) {
-        for (let i = 0; i < result.length; i++) {
-          output += result[i].word + '<br/>';
-        }
-      } else {
-        output = 'No word vector found';
-      }
-      nearResults.html(output);
-    });
-      word2Vec.nearest(adj1_value, (error, result) => {
-      let output = '';
+function fillLyrics(button){
+    button.mousePressed(bohemianRhapsody);
+}
+
+function bohemianRhapsody(){
+    showLyrics();
+    calcWord(adj1_value,adjective1Result);
+    calcWord(noun1_value,noun1Result);
+}
+
+function calcWord(input,output){
+    word2Vec.nearest(input, (error, result) => {
+      let word = '';
       if (result) {
         let i = floor(random(0,result.length));
-        output = result[i].word;
+        word = result[i].word;
       } else {
-        output = '[Try another word]';
+        word = '[Try another word]';
       }
-      adjective1Result.html(output);
+      output.html(word);
     });
-      word2Vec.nearest(noun1_value, (error, result) => {
-      let output = '';
-      if (result) {
-        let i = floor(random(0,result.length));
-        output = result[i].word;
-      } else {
-        output = '[Try another word]';
-      }
-      noun1Result.html(output);
-    });
-  });
+}
+
+function showLyrics(){
+    songLyrics.show();
 }
