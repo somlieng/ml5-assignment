@@ -6,13 +6,43 @@
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <!-- ml5 -->
-    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.5.0/dist/ml5.min.js"></script>
     <meta charset="utf-8" />
   </head>
   <body>
-    <h1>What should I make for dinner?</h1>
-    <div id="video"></div>
-    <div id="results"></div>
-    <script src="sketch.js"></script>
-  </body>
+  <h1>Nearest word Madlibs</h1>
+  <p id='status'>Loading Model...</p>
+  <div>
+    <div class="row">
+      <p>
+        <input type="text" value="tree" id="nearword"                              />
+        <button id="submit" class="btn btn-primary">is nearest to ...</button>
+      </p>
+      <p id="results"></p>
+    </div>
+
+    <div class="row">
+      <p>
+        Between
+        <input type="text" value="car" id="between1"                              /> and
+        <input type="text" value="tire" id="between2"                              />
+        <button id="submit2" class="btn btn-primary">is ...</button>
+      </p>
+      <p id="results2"></p>
+    </div>
+
+    <div class="row">
+      <p>
+        <input type="text" value="fruit" id="isto1"                              /> is to
+        <input type="text" value="tree" id="isto2"                              /> as
+        <input type="text" value="monkey" id="isto3"                              />
+        <button id="submit3" class="btn btn-primary">is to ...</button>
+      </p>
+      <p id="results3"></p>
+    </div>
+  </div>
+
+  <script src="sketch.js"></script>
+
+</body>
 </html>
