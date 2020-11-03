@@ -18,14 +18,40 @@ let adj1_value;
 let adjective1Result;
 
 let noun1input;
-let noun1Result;
 let noun1_value;
+let noun1Result;
+
+let disasterinput;
+let disaster_value;
+let disasterResult;
+
+let verb1input;
+let verb1_value;
+let verb1Result;
 
 let noun2input;
-let noun2Result;
 let noun2_value;
+let noun2Result;
+
+let organinput;
+let organ_value;
+let organResult;
+
+let adjective2input;
+let adj2_value;
+let adjective2Result;
+
+let noun3input;
+let noun3_value;
+let noun3Result;
 
 let songLyrics;
+let intro;
+let verse1;
+let verse2;
+let verse3;
+let verse4;
+let outro;
 
 function modelLoaded() {
   select('#status').html('Model Loaded');
@@ -35,8 +61,24 @@ function setup() {
   noLoop();
 //  noCanvas();
     createCanvas(windowWidth,windowHeight);
-    songLyrics = select('#lyrics');
-    songLyrics.hide();
+    
+    intro = select('#intro');
+    intro.hide();
+    
+    verse1 = select('#verse1');
+    verse1.hide();
+    
+    verse2 = select('#verse2');
+    verse2.hide();
+    
+    verse3 = select('#verse3');
+    verse3.hide();
+    
+    verse4 = select('#verse4');
+    verse4.hide();
+    
+    outro = select('#outro');
+    outro.hide();
 
   // Create the Word2Vec model with pre-trained file of 5000 words
   word2Vec = ml5.word2vec('wordvecs10000.json', modelLoaded);
@@ -57,7 +99,12 @@ function bohemianRhapsody(){
     initializeDOM();
     calcWord(adj1_value,adjective1Result);
     calcWord(noun1_value,noun1Result);
+    calcWord(disaster_value,disasterResult);
+    calcWord(verb1_value,verb1Result);
     calcWord(noun2_value,noun2Result);
+    calcWord(organ_value,organResult);
+    calcWord(adj2_value,adjective2Result);
+    calcWord(noun3_value,noun3Result);
 }
 
 function initializeDOM(){
@@ -74,9 +121,29 @@ function initializeDOM(){
     noun1_value = noun1input.value();
     noun1Result = select('#noun1');
     
-    noun2input = select('#landslide');
+    disasterinput = select('#landslide');
+    disaster_value = disasterinput.value();
+    disasterResult = select('#natrual-disaster');
+    
+    verb1input = select('#escape');
+    verb1_value = verb1input.value();
+    verb1Result = select('#verb1');
+    
+    noun2input = select('#reality');
     noun2_value = noun2input.value();
-    noun2Result = select('#natrual-disaster');
+    noun2Result = select('#noun2');
+    
+    organinput = select('#eyes');
+    organ_value = organinput.value();
+    organResult = select('#organ');
+    
+    adjective2input = select('#poor');
+    adj2_value = adjective2input.value();
+    adjective2Result = select('#adj2');
+    
+    noun3input = select('#boy');
+    noun3_value = noun3input.value();
+    noun3Result = select('#noun3');
 }
 
 function calcWord(input,output){
@@ -93,5 +160,5 @@ function calcWord(input,output){
 }
 
 function showLyrics(){
-    songLyrics.show();
+    intro.show();
 }

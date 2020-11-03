@@ -1,8 +1,16 @@
 html, body {
-    margin: 0;
+    margin: 0px;
     padding: 0;
 }
 
 canvas {
   display: block;
+}
+
+.container {
+    display: flex;
+}
+
+.madlib {
+    color: blue;
 }
