@@ -22,25 +22,20 @@ function setup() {
   word2Vec = ml5.word2vec('wordvecs10000.json', modelLoaded);
 
   // Select all the DOM elements
-  let nearWordInput = select('#nearword');
-  let nearButton = select('#submit');
-  let nearResults = select('#results');
-
-  let betweenWordInput1 = select("#between1");
-  let betweenWordInput2 = select("#between2");
-  let betweenButton = select("#submit2");
-  let betweenResults = select("#results2");
-
-  let addInput1 = select("#isto1");
-  let addInput2 = select("#isto2");
-  let addInput3 = select("#isto3");
-  let addButton = select("#submit3");
-  let addResults = select("#results3");
+    let nearWordInput = select('#nearword');
+    let nearButton = select('#submit');
+    let nearResults = select('#results');
+    let adjective1input = select('#real');
+    let adjective1Result = select('#adj1');
+    let noun1input = select('#life');
+    let noun1Result = select('#noun1');
 
   // Finding the nearest words
   nearButton.mousePressed(() => {
     let word = nearWordInput.value();
-    word2Vec.nearest(word, (err, result) => {
+    let adj1_value = adjective1input.value();
+    let noun1_value = noun1input.value();
+    word2Vec.nearest(word, (error, result) => {
       let output = '';
       if (result) {
         for (let i = 0; i < result.length; i++) {
@@ -51,24 +46,25 @@ function setup() {
       }
       nearResults.html(output);
     });
-  });
-
-  // Finding the average of two words
-  betweenButton.mousePressed(() => {
-    let word1 = betweenWordInput1.value();
-    let word2 = betweenWordInput2.value();
-    word2Vec.average([word1, word2], 4, (err, average) => {
-      betweenResults.html(average[0].word);
-    })
-  });
-
-  // Adding two words together to "solve" an analogy
-  addButton.mousePressed(() => {
-    let is1 = addInput1.value();
-    let to1 = addInput2.value();
-    let is2 = addInput3.value();
-    word2Vec.subtract([to1, is1])
-      .then(difference => word2Vec.add([is2, difference[0].word]))
-      .then(result => addResults.html(result[0].word))
+      word2Vec.nearest(adj1_value, (error, result) => {
+      let output = '';
+      if (result) {
+        let i = floor(random(0,result.length));
+        output = result[i].word;
+      } else {
+        output = '[Try another word]';
+      }
+      adjective1Result.html(output);
+    });
+      word2Vec.nearest(noun1_value, (error, result) => {
+      let output = '';
+      if (result) {
+        let i = floor(random(0,result.length));
+        output = result[i].word;
+      } else {
+        output = '[Try another word]';
+      }
+      noun1Result.html(output);
+    });
   });
 }

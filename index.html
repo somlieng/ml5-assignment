@@ -10,37 +10,75 @@
     <meta charset="utf-8" />
   </head>
   <body>
-  <h1>Nearest word Madlibs</h1>
-  <p id='status'>Loading Model...</p>
-  <div>
-    <div class="row">
-      <p>
-        <input type="text" value="tree" id="nearword"                              />
-        <button id="submit" class="btn btn-primary">is nearest to ...</button>
-      </p>
+      <h1>Computer Telephone Madlibs</h1>
+      <h3>What if you whispered song lyrics to a computer?</h3>
+      <p id='status'>Loading Model...</p>
+        <div class="input">
+          <p>
+            Example: 
+              <input type="text" value="tree" id="nearword"/>
+          </p>
+            <p>
+            Adjective: 
+              <input type="text" value="real" id="real"/>
+            </p>
+            <p>
+            Noun: 
+              <input type="text" value="life" id="life"/>
+            </p>
+            <p>
+            Noun: 
+              <input type="text" value="landslide" id="landslide"/>
+            </p>
+            <p>
+            Verb: 
+              <input type="text" value="escape" id="escape"/>
+            </p>
+            <p>
+            Noun: 
+              <input type="text" value="realtiy" id="reality"/>
+            </p>
+            <p>
+            Plural Organ: 
+              <input type="text" value="eyes" id="eyes"/>
+            </p>
+            <p>
+            Adjective: 
+              <input type="text" value="poor" id="poor"/>
+            </p>
+            <p>
+            Noun: 
+              <input type="text" value="boy" id="boy"/>
+            </p>
+            <p>
+            Noun: 
+              <input type="text" value="wind" id="wind"/>
+            </p>
+            <button id="submit" class="btn btn-primary">Make story</button>
+        </div>
       <p id="results"></p>
-    </div>
-
-    <div class="row">
-      <p>
-        Between
-        <input type="text" value="car" id="between1"                              /> and
-        <input type="text" value="tire" id="between2"                              />
-        <button id="submit2" class="btn btn-primary">is ...</button>
-      </p>
-      <p id="results2"></p>
-    </div>
-
-    <div class="row">
-      <p>
-        <input type="text" value="fruit" id="isto1"                              /> is to
-        <input type="text" value="tree" id="isto2"                              /> as
-        <input type="text" value="monkey" id="isto3"                              />
-        <button id="submit3" class="btn btn-primary">is to ...</button>
-      </p>
-      <p id="results3"></p>
-    </div>
-  </div>
+      <h3>
+          Is this the 
+          <span id="adj1" class="madlib"></span> 
+          <span id="noun1"class="madlib"></span>
+          ? Is this just fantasy?<br>
+          Caught in a
+          <span id="natrual-disaster" class="madlib"></span>
+          , no 
+          <span id="verb" class="madlib"></span>
+          from 
+          <span id="noun2"class="madlib"></span>
+          Open your 
+          <span id="organ"class="madlib"></span>
+          , look up to the skies and see. I'm just a 
+          <span id="adj2" class="madlib"></span> 
+          <span id="noun3"class="madlib"></span>
+          , I need no sympathy
+          Because I'm easy come, easy go, little high, little low
+          Any way the 
+          <span id="noun4"class="madlib"></span>
+          blows doesn't really matter to me, to me
+      </h3>
 
   <script src="sketch.js"></script>
 
