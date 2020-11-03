@@ -21,6 +21,10 @@ let noun1input;
 let noun1Result;
 let noun1_value;
 
+let noun2input;
+let noun2Result;
+let noun2_value;
+
 let songLyrics;
 
 function modelLoaded() {
@@ -37,6 +41,26 @@ function setup() {
   // Create the Word2Vec model with pre-trained file of 5000 words
   word2Vec = ml5.word2vec('wordvecs10000.json', modelLoaded);
     
+    //initalize DOM elements
+    initializeDOM();
+    
+    //button press function
+    fillLyrics(submitButton);
+}
+
+function fillLyrics(button){
+    button.mousePressed(bohemianRhapsody);
+}
+
+function bohemianRhapsody(){
+    showLyrics();
+    initializeDOM();
+    calcWord(adj1_value,adjective1Result);
+    calcWord(noun1_value,noun1Result);
+    calcWord(noun2_value,noun2Result);
+}
+
+function initializeDOM(){
     //Initialize all DOM elements
     nearWordInput = select('#nearword');
     submitButton = select('#submit');
@@ -49,18 +73,10 @@ function setup() {
     noun1input = select('#life');
     noun1_value = noun1input.value();
     noun1Result = select('#noun1');
-
-    fillLyrics(submitButton);
-}
-
-function fillLyrics(button){
-    button.mousePressed(bohemianRhapsody);
-}
-
-function bohemianRhapsody(){
-    showLyrics();
-    calcWord(adj1_value,adjective1Result);
-    calcWord(noun1_value,noun1Result);
+    
+    noun2input = select('#landslide');
+    noun2_value = noun2input.value();
+    noun2Result = select('#natrual-disaster');
 }
 
 function calcWord(input,output){
