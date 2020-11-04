@@ -41,6 +41,12 @@ let noun4input;
 let noun4_value;
 let noun4Result;
 
+let familyMemberinput;
+let familyMember_value;
+let familyMember1Result;
+let familyMember2Result;
+let familyMember3Result;
+
 //Divs for song lyrics
 let songLyrics;
 let intro;
@@ -52,10 +58,13 @@ let outro;
 
 //Divs for input
 let verse1Input;
+let verse2Input;
 
 //count to turn on verse and inputs
 let verses = 0;
 let input = 0;
+let verseShowing = false;
+let inputShowing = false;
 
 function modelLoaded() {
   select('#status').html('Model Loaded');
@@ -68,6 +77,9 @@ function setup() {
     
     verse1Input = select('#verse1Input');
     verse1Input.hide();
+    
+    verse2Input = select('#verse2Input');
+    verse2Input.hide();
     
     intro = select('#intro');
     intro.hide();
@@ -121,6 +133,9 @@ function bohemianRhapsody(){
     calcWord(adj2_value,adjective2Result);
     calcWord(noun3_value,noun3Result);
     calcWord(noun4_value,noun4Result);
+    calcWord(familyMember_value,familyMember1Result);
+    calcWord(familyMember_value,familyMember2Result);
+    calcWord(familyMember_value,familyMember3Result);
 }
 
 function initializeDOM(){
@@ -163,6 +178,12 @@ function initializeDOM(){
     noun4input = select('#wind');
     noun4_value = noun4input.value();
     noun4Result = select('#noun4');
+    
+    familyMemberinput = select('#mama');
+    familyMember_value = familyMemberinput.value();
+    familyMember1Result = select('#family1');
+    familyMember2Result = select('#family2');
+    familyMember3Result = select('#family3');
 }
 
 function calcWord(input,output){
@@ -184,25 +205,51 @@ function showLyrics(){
             intro.show();
             showButton.show();
             verses++;
+            verseShowing = true;
             break;
         case 1:
-            verse1.show();
-            verses++;
+            if(inputShowing === true){
+              verse1.show();
+              verses++;
+              inputShowing = false;
+              verseShowing = true;
+              break;  
+            }
             break;
         case 2:
-            verse2.show();
-            verses++;
+            if(inputShowing === true){
+              verse2.show();
+              verses++;
+              inputShowing = false;
+              verseShowing = true;
+              break;  
+            }
             break;
         case 3:
-            verse3.show();
-            verses++;
+            if(inputShowing === true){
+              verse3.show();
+              verses++;
+              inputShowing = false;
+              verseShowing = true;
+              break;  
+            }
             break;
         case 4:
-            verse4.show();
-            verses++;
+            if(inputShowing === true){
+              verse4.show();
+              verses++;
+              inputShowing = false;
+              verseShowing = true;
+              break;  
+            }
             break;
         case 5:
-            outro.show();
+            if(inputShowing === true){
+              outro.show();
+              inputShowing = false;
+              verseShowing = true;
+              break;  
+            }
             break;
     }
 }
@@ -212,6 +259,17 @@ function showInputs(){
         case 0:
             verse1Input.show();
             input++;
+            verseShowing = false;
+            inputShowing = true;
+            break;   
+        case 1:
+            if(verseShowing === true){
+                verse2Input.show();
+                verseShowing = false;
+                inputShowing = true;
+                input++;
+                break;
+            }
             break;
     }
 }
