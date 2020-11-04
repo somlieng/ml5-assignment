@@ -1,17 +1,9 @@
-// Copyright (c) 2019 ml5
-//
-// This software is released under the MIT License.
-// https://opensource.org/licenses/MIT
-
-/* ===
-ml5 Example
-Word2Vec example with p5.js. Using a pre-trained model on common English words.
-=== */
-
+//Declare word2Vec model
 let word2Vec;
 
 //Declare all DOM elements
 let submitButton;
+let showButton;
 
 let adjective1input;
 let adj1_value;
@@ -45,6 +37,11 @@ let noun3input;
 let noun3_value;
 let noun3Result;
 
+let noun4input;
+let noun4_value;
+let noun4Result;
+
+//Divs for song lyrics
 let songLyrics;
 let intro;
 let verse1;
@@ -52,6 +49,13 @@ let verse2;
 let verse3;
 let verse4;
 let outro;
+
+//Divs for input
+let verse1Input;
+
+//count to turn on verse and inputs
+let verses = 0;
+let input = 0;
 
 function modelLoaded() {
   select('#status').html('Model Loaded');
@@ -61,6 +65,9 @@ function setup() {
   noLoop();
 //  noCanvas();
     createCanvas(windowWidth,windowHeight);
+    
+    verse1Input = select('#verse1Input');
+    verse1Input.hide();
     
     intro = select('#intro');
     intro.hide();
@@ -86,12 +93,20 @@ function setup() {
     //initalize DOM elements
     initializeDOM();
     
+    showButton.hide();
+    
     //button press function
     fillLyrics(submitButton);
+    showMoreInputs(showButton);
+    
 }
 
 function fillLyrics(button){
     button.mousePressed(bohemianRhapsody);
+}
+
+function showMoreInputs(button){
+    button.mousePressed(showInputs);
 }
 
 function bohemianRhapsody(){
@@ -105,13 +120,13 @@ function bohemianRhapsody(){
     calcWord(organ_value,organResult);
     calcWord(adj2_value,adjective2Result);
     calcWord(noun3_value,noun3Result);
+    calcWord(noun4_value,noun4Result);
 }
 
 function initializeDOM(){
     //Initialize all DOM elements
-    nearWordInput = select('#nearword');
     submitButton = select('#submit');
-    nearResults = select('#results');
+    showButton = select('#moreInputs');
     
     adjective1input = select('#real');
     adj1_value = adjective1input.value();
@@ -144,6 +159,10 @@ function initializeDOM(){
     noun3input = select('#boy');
     noun3_value = noun3input.value();
     noun3Result = select('#noun3');
+    
+    noun4input = select('#wind');
+    noun4_value = noun4input.value();
+    noun4Result = select('#noun4');
 }
 
 function calcWord(input,output){
@@ -160,5 +179,39 @@ function calcWord(input,output){
 }
 
 function showLyrics(){
-    intro.show();
+    switch(verses){
+        case 0:
+            intro.show();
+            showButton.show();
+            verses++;
+            break;
+        case 1:
+            verse1.show();
+            verses++;
+            break;
+        case 2:
+            verse2.show();
+            verses++;
+            break;
+        case 3:
+            verse3.show();
+            verses++;
+            break;
+        case 4:
+            verse4.show();
+            verses++;
+            break;
+        case 5:
+            outro.show();
+            break;
+    }
+}
+
+function showInputs(){
+    switch(input){
+        case 0:
+            verse1Input.show();
+            input++;
+            break;
+    }
 }
