@@ -59,6 +59,9 @@ let outro;
 //Divs for input
 let verse1Input;
 let verse2Input;
+let verse3Input;
+let verse4Input;
+let outroInput;
 
 //count to turn on verse and inputs
 let verses = 0;
@@ -80,6 +83,15 @@ function setup() {
     
     verse2Input = select('#verse2Input');
     verse2Input.hide();
+    
+    verse3Input = select('#verse3Input');
+    verse3Input.hide();
+    
+    verse4Input = select('#verse4Input');
+    verse4Input.hide();
+    
+    outroInput = select('#outroInput');
+    outroInput.hide();
     
     intro = select('#intro');
     intro.hide();
