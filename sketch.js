@@ -283,5 +283,31 @@ function showInputs(){
                 break;
             }
             break;
+        case 2:
+            if(verseShowing === true){
+                verse3Input.show();
+                verseShowing = false;
+                inputShowing = true;
+                input++;
+                break;
+            }
+            break;
+        case 3:
+            if(verseShowing === true){
+                verse4Input.show();
+                verseShowing = false;
+                inputShowing = true;
+                input++;
+                break;
+            }
+            break;
+        case 4:
+            if(verseShowing === true){
+                outroInput.show();
+                verseShowing = false;
+                inputShowing = true;
+                break;
+            }
+            break;
     }
 }
