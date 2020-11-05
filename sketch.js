@@ -116,6 +116,30 @@ let noun8input;
 let noun8_value;
 let noun8Result;
 
+let verb8input;
+let verb8_value;
+let verb8Result;
+
+let verb9input;
+let verb9_value;
+let verb9Result;
+
+let verb10input;
+let verb10_value;
+let verb10Result;
+
+let verb11input;
+let verb11_value;
+let verb11Result;
+
+let noun9input;
+let noun9_value;
+let noun9Result;
+
+let verb12input;
+let verb12_value;
+let verb12Result;
+
 //Divs for song lyrics
 let songLyrics;
 let intro;
@@ -242,6 +266,14 @@ function bohemianRhapsody(){
     calcWord(verb7_value,verb7Result);
     calcWord(noun8_value,noun8Result);
     
+    calcWord(verb8_value,verb8Result);
+    calcWord(verb9_value,verb9Result);
+    calcWord(verb10_value,verb10Result);
+    calcWord(verb11_value,verb11Result);
+    
+    calcWord(noun9_value,noun9Result);
+    calcWord(verb12_value,verb12Result);
+    
     showLyrics();
 }
 
@@ -360,6 +392,30 @@ function initializeDOM(){
     noun8input = select('#devil');
     noun8_value = noun8input.value();
     noun8Result = select('#noun8');
+    
+    verb8input = select('#stone');
+    verb8_value = verb8input.value();
+    verb8Result = select('#verb8');
+    
+    verb9input = select('#spit');
+    verb9_value = verb9input.value();
+    verb9Result = select('#verb9');
+
+    verb10input = select('#love');
+    verb10_value = verb10input.value();
+    verb10Result = select('#verb10');
+
+    verb11input = select('#leave');
+    verb11_value = verb11input.value();
+    verb11Result = select('#verb11');
+
+    noun9input = select('#wind2');
+    noun9_value = noun9input.value();
+    noun9Result = select('#noun9');
+
+    verb12input = select('#blows');
+    verb12_value = verb12input.value();
+    verb12Result = select('#verb12');
 }
 
 function calcWord(input,output){
