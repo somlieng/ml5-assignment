@@ -64,6 +64,26 @@ let carry_value;
 let carryResult1;
 let carryResult2;
 
+let verb3input;
+let verb3_value;
+let verb3Result;
+
+let bodypart2input;
+let bodypart2_value;
+let bodypart2Result;
+
+let verb4input;
+let verb4_value;
+let verb4Result;
+
+let noun6input;
+let noun6_value;
+let noun6Result;
+
+let verb5input;
+let verb5_value;
+let verb5Result;
+
 //Divs for song lyrics
 let songLyrics;
 let intro;
@@ -153,7 +173,6 @@ function showMoreInputs(button){
 }
 
 function bohemianRhapsody(){
-    showLyrics();
     
     initializeDOM();
     
@@ -175,6 +194,14 @@ function bohemianRhapsody(){
     calcWord(verb2_value,verb2Result);
     calcWord(carry_value,carryResult1);
     calcWord(carry_value,carryResult2);
+    
+    calcWord(verb3_value,verb3Result);
+    calcWord(bodypart2_value,bodypart2Result);
+    calcWord(verb4_value,verb4Result);
+    calcWord(noun6_value,noun6Result);
+    calcWord(verb5_value,verb5Result);
+    
+    showLyrics();
 }
 
 function initializeDOM(){
@@ -239,7 +266,27 @@ function initializeDOM(){
     carryinput = select('#carry');
     carry_value = carryinput.value();
     carryResult1 = select('#carry1');
-    carryResult2 = select('#carry2');;
+    carryResult2 = select('#carry2');
+    
+    verb3input = select('#shivers');
+    verb3_value = verb3input.value();
+    verb3Result = select('#verb3');
+
+    bodypart2input = select('#spine');
+    bodypart2_value = bodypart2input.value();
+    bodypart2Result = select('#bodypart2');
+
+    verb4input = select('#leave');
+    verb4_value = verb4input.value();
+    verb4Result = select('#verb4');
+    
+    noun6input = select('#truth');
+    noun6_value = noun6input.value();
+    noun6Result = select('#noun6');
+
+    verb5input = select('#die');
+    verb5_value = verb5input.value();
+    verb5Result = select('#verb5');
 }
 
 function calcWord(input,output){
