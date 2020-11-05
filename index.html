@@ -14,10 +14,11 @@
       <h1>Telephone Bohemian Rhapsody</h1>
       <h3>What if you whispered Bohemian Rhapsody to a computer?</h3>
       <p id='status'>Loading Model...</p>
+      
+      <!--Intro container-->
       <div class="container">  
-      <div class="input">
           
-            <div id='introInput'>
+          <div id='introInput'>
                 <h4>Intro</h4>
                 <p>
                 Adjective: 
@@ -55,8 +56,25 @@
                 Noun: 
                   <input type="text" value="wind" id="wind"/>
                 </p>
-            </div>
+          </div>
           
+          <div id='intro'>
+            <h3>
+              [Intro]<br>
+              Is this the <span id="adj1" class="madlib"></span> <span id="noun1"class="madlib"></span>? Is this just fantasy<br>
+              Caught in a <span id="natrual-disaster" class="madlib"></span>, no <span id="verb1" class="madlib"></span> from <span id="noun2"class="madlib"></span><br>
+              Open your <span id="organ"class="madlib"></span>, look up to the skies and see.<br> 
+              I'm just a <span id="adj2" class="madlib"></span> <span id="noun3"class="madlib"></span>, I need no sympathy<br>
+              Because I'm easy come, easy go, little high, little low<br>
+              Any way the <span id="noun4"class="madlib"></span> blows doesn't really matter to me, to me<br><br>  
+            </h3>
+          </div>
+          
+        </div>
+      
+        <!--Verse 1 container-->
+        <div class="container">
+            
             <div id='verse1Input'>
                 <h4>Verse 1</h4>
                 <p>
@@ -80,7 +98,25 @@
                   <input type="text" value="carry" id="carry"/>
                 </p>
             </div>
-          
+            
+            <div id='verse1'>
+            <h3>
+              [Verse 1]<br>
+              <span id="family1"class="madlib"></span>, just killed a man<br>
+              Put a <span id="noun5"class="madlib"></span> against his <span id="bodypart"class="madlib"></span>, pulled my trigger, now he's dead<br>
+              <span id="family2"class="madlib"></span>, life had just begun<br>
+              But now I've gone and <span id="verb2" class="madlib"></span> it all away<br>
+              <span id="family3"class="madlib"></span>, ooh, didn't mean to make you cry<br>
+              If I'm not back again this time tomorrow<br>
+              <span id="carry1"class="madlib"></span> on, <span id="carry2"class="madlib"></span> on as if nothing really matters<br><br>
+            </h3>
+          </div>
+        
+        </div> 
+      
+        <!--Verse 2 container-->
+        <div class="container">
+            
             <div id='verse2Input'>
                 <h4>Verse 2</h4>
                 <p>
@@ -104,8 +140,26 @@
                   <input type="text" value="die" id="die"/>
                 </p>
             </div>
-          
-          <div id='verse3Input'>
+            
+            <div id='verse2'>
+            <h3>
+              [Verse 2]<br>
+              Too late, my time has come<br>
+              Sends <span id="verb3" class="madlib"></span> down my <span id="bodypart2"class="madlib"></span>, body's aching all the time<br>
+              Goodbye, everybody, I've got to go<br>
+              Gotta <span id="verb4" class="madlib"></span> you all behind and face the <span id="noun6"class="madlib"></span><br>
+              Mama, ooh (Any way the wind blows)<br>
+              I don't wanna <span id="verb5" class="madlib"></span><br>
+              I sometimes wish I'd never been born at all<br><br>
+            </h3>
+          </div>
+            
+        </div>
+      
+        <!--Verse 3 container-->
+        <div class="container">
+            
+            <div id='verse3Input'>
                 <h4>Verse 3</h4>
                 <p>
                 Adjective: 
@@ -140,79 +194,8 @@
                   <input type="text" value="devil" id="devil"/>
                 </p>
             </div>
-          
-          <div id='verse4Input'>
-                <h4>Verse 4</h4>
-                <p>
-                Verb: 
-                  <input type="text" value="stone" id="stone"/>
-                </p>
-                <p>
-                Verb: 
-                  <input type="text" value="spit" id="spit"/>
-                </p>
-                <p>
-                Verb: 
-                  <input type="text" value="love" id="love"/>
-                </p>
-                <p>
-                Verb: 
-                  <input type="text" value="leave" id="leave"/>
-                </p>
-            </div>
-          
-          <div id='outroInput'>
-                <h4>Outro</h4>
-                <p>
-                Noun: 
-                  <input type="text" value="wind" id="wind2"/>
-                </p>
-                <p>
-                Verb: 
-                  <input type="text" value="blows" id="blows"/>
-                </p>
-            </div>
-          
-            <button id="submit" class="btn btn-primary">Make Freddie Mercury Proud</button>
-            <button id="moreInputs" class="btn btn-primary">Click here to do next verse</button>
-        </div>
-      <div id="lyrics">
-          <div id='intro'>
-            <h3>
-              [Intro]<br>
-              Is this the <span id="adj1" class="madlib"></span> <span id="noun1"class="madlib"></span>? Is this just fantasy<br>
-              Caught in a <span id="natrual-disaster" class="madlib"></span>, no <span id="verb1" class="madlib"></span> from <span id="noun2"class="madlib"></span><br>
-              Open your <span id="organ"class="madlib"></span>, look up to the skies and see.<br> 
-              I'm just a <span id="adj2" class="madlib"></span> <span id="noun3"class="madlib"></span>, I need no sympathy<br>
-              Because I'm easy come, easy go, little high, little low<br>
-              Any way the <span id="noun4"class="madlib"></span> blows doesn't really matter to me, to me<br><br>  
-            </h3>
-          </div>
-          <div id='verse1'>
-            <h3>
-              [Verse 1]<br>
-              <span id="family1"class="madlib"></span>, just killed a man<br>
-              Put a <span id="noun5"class="madlib"></span> against his <span id="bodypart"class="madlib"></span>, pulled my trigger, now he's dead<br>
-              <span id="family2"class="madlib"></span>, life had just begun<br>
-              But now I've gone and <span id="verb2" class="madlib"></span> it all away<br>
-              <span id="family3"class="madlib"></span>, ooh, didn't mean to make you cry<br>
-              If I'm not back again this time tomorrow<br>
-              <span id="carry1"class="madlib"></span> on, <span id="carry2"class="madlib"></span> on as if nothing really matters<br><br>
-            </h3>
-          </div>
-          <div id='verse2'>
-            <h3>
-              [Verse 2]<br>
-              Too late, my time has come<br>
-              Sends <span id="verb3" class="madlib"></span> down my <span id="bodypart2"class="madlib"></span>, body's aching all the time<br>
-              Goodbye, everybody, I've got to go<br>
-              Gotta <span id="verb4" class="madlib"></span> you all behind and face the <span id="noun6"class="madlib"></span><br>
-              Mama, ooh (Any way the wind blows)<br>
-              I don't wanna <span id="verb5" class="madlib"></span><br>
-              I sometimes wish I'd never been born at all<br><br>
-            </h3>
-          </div>
-          <div id='verse3'>
+            
+            <div id='verse3'>
             <h3>
               [Verse 3]<br>
               I see a <span id="adj3" class="madlib"></span> <span id="noun7"class="madlib"></span> of a man<br>
@@ -234,7 +217,33 @@
               Beelzebub has a <span id="noun8"class="madlib"></span> put aside for me, for me, for me!<br><br>
             </h3>
           </div>
-          <div id='verse4'>
+            
+        </div>
+      
+        <!--Verse 4 container-->
+        <div class="container">
+        
+            <div id='verse4Input'>
+                <h4>Verse 4</h4>
+                <p>
+                Verb: 
+                  <input type="text" value="stone" id="stone"/>
+                </p>
+                <p>
+                Verb: 
+                  <input type="text" value="spit" id="spit"/>
+                </p>
+                <p>
+                Verb: 
+                  <input type="text" value="love" id="love"/>
+                </p>
+                <p>
+                Verb: 
+                  <input type="text" value="leave" id="leave"/>
+                </p>
+            </div>
+            
+            <div id='verse4'>
             <h3>
               [Verse 4]<br>
               So you think you can <span id="verb8" class="madlib"></span> me and <span id="verb9" class="madlib"></span> in my eye?<br>
@@ -243,7 +252,25 @@
               Just gotta get out, just gotta get right outta here<br><br>
             </h3>
           </div>
-          <div id='outro'>
+            
+        </div>
+      
+        <!--Verse 5 container-->
+        <div class="container">
+            
+            <div id='outroInput'>
+                <h4>Outro</h4>
+                <p>
+                Noun: 
+                  <input type="text" value="wind" id="wind2"/>
+                </p>
+                <p>
+                Verb: 
+                  <input type="text" value="blows" id="blows"/>
+                </p>
+            </div>
+            
+            <div id='outro'>
             <h3>
               [Outro]<br>
               (Ooh)<br>
@@ -254,8 +281,12 @@
               Any way the <span id="noun9"class="madlib"></span> <span id="verb12" class="madlib"></span><br>
             </h3>
           </div>
-      </div>
-      </div>
+            
+        </div>
+          
+          
+        <button id="submit" class="btn btn-primary">Make Freddie Mercury Proud</button>
+        <button id="moreInputs" class="btn btn-primary">Click here to do next verse</button>
 
   <script src="sketch.js"></script>
 
