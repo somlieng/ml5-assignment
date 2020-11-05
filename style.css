@@ -1,10 +1,14 @@
 html, body {
-    padding: 0;
     overflow-x: hidden;
 }
 
 html{
-    margin: 40px;
+    margin: 16px;
+}
+
+body{
+    background-color:white;
+    padding:20px;
 }
 
 canvas {

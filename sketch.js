@@ -202,9 +202,9 @@ function preload(){
 }
 
 function setup() {
-  noLoop();
-//  noCanvas();
-    createCanvas(windowWidth,windowHeight);
+//  noLoop();
+
+  createCanvas(windowWidth,windowHeight);
 
   // Create the Word2Vec model with pre-trained file of 5000 words
   word2Vec = ml5.word2vec('wordvecs10000.json', modelLoaded);
@@ -405,7 +405,7 @@ function initializeDOM(){
     verb10_value = verb10input.value();
     verb10Result = select('#verb10');
 
-    verb11input = select('#leave');
+    verb11input = select('#leave2');
     verb11_value = verb11input.value();
     verb11Result = select('#verb11');
 
