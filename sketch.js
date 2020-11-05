@@ -8,6 +8,7 @@ let showButton;
 let adjective1input;
 let adj1_value;
 let adjective1Result;
+let adj1_list;
 
 let noun1input;
 let noun1_value;
@@ -217,6 +218,7 @@ function setup() {
     //button press function
     fillLyrics(submitButton);
     showMoreInputs(showButton);
+    tooltip();
     
 }
 
@@ -275,6 +277,20 @@ function bohemianRhapsody(){
     calcWord(verb12_value,verb12Result);
     
     showLyrics();
+    
+}
+
+function tooltip(){
+//    tippy('#adj1', {
+//        content: adj1_value,
+//      });
+    tippyHelper('#adj1',adj1_value);
+}
+
+function tippyHelper(hover,word){
+    tippy(hover, {
+        content: word,
+      });
 }
 
 function initializeDOM(){
