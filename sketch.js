@@ -47,6 +47,23 @@ let familyMember1Result;
 let familyMember2Result;
 let familyMember3Result;
 
+let noun5input;
+let noun5_value;
+let noun5Result;
+
+let bodypartinput;
+let bodypart_value;
+let bodypartResult;
+
+let verb2input;
+let verb2_value;
+let verb2Result;
+
+let carryinput;
+let carry_value;
+let carryResult1;
+let carryResult2;
+
 //Divs for song lyrics
 let songLyrics;
 let intro;
@@ -73,11 +90,7 @@ function modelLoaded() {
   select('#status').html('Model Loaded');
 }
 
-function setup() {
-  noLoop();
-//  noCanvas();
-    createCanvas(windowWidth,windowHeight);
-    
+function preload(){
     verse1Input = select('#verse1Input');
     verse1Input.hide();
     
@@ -110,6 +123,12 @@ function setup() {
     
     outro = select('#outro');
     outro.hide();
+}
+
+function setup() {
+  noLoop();
+//  noCanvas();
+    createCanvas(windowWidth,windowHeight);
 
   // Create the Word2Vec model with pre-trained file of 5000 words
   word2Vec = ml5.word2vec('wordvecs10000.json', modelLoaded);
@@ -135,7 +154,9 @@ function showMoreInputs(button){
 
 function bohemianRhapsody(){
     showLyrics();
+    
     initializeDOM();
+    
     calcWord(adj1_value,adjective1Result);
     calcWord(noun1_value,noun1Result);
     calcWord(disaster_value,disasterResult);
@@ -145,9 +166,15 @@ function bohemianRhapsody(){
     calcWord(adj2_value,adjective2Result);
     calcWord(noun3_value,noun3Result);
     calcWord(noun4_value,noun4Result);
+    
     calcWord(familyMember_value,familyMember1Result);
     calcWord(familyMember_value,familyMember2Result);
     calcWord(familyMember_value,familyMember3Result);
+    calcWord(noun5_value,noun5Result);
+    calcWord(bodypart_value,bodypartResult);
+    calcWord(verb2_value,verb2Result);
+    calcWord(carry_value,carryResult1);
+    calcWord(carry_value,carryResult2);
 }
 
 function initializeDOM(){
@@ -196,6 +223,23 @@ function initializeDOM(){
     familyMember1Result = select('#family1');
     familyMember2Result = select('#family2');
     familyMember3Result = select('#family3');
+    
+    noun5input = select('#gun');
+    noun5_value = noun5input.value();
+    noun5Result = select('#noun5');
+    
+    bodypartinput = select('#head');
+    bodypart_value = bodypartinput.value();
+    bodypartResult = select('#bodypart');
+    
+    verb2input = select('#thrown');
+    verb2_value = verb2input.value();
+    verb2Result = select('#verb2');
+    
+    carryinput = select('#carry');
+    carry_value = carryinput.value();
+    carryResult1 = select('#carry1');
+    carryResult2 = select('#carry2');;
 }
 
 function calcWord(input,output){
@@ -211,6 +255,7 @@ function calcWord(input,output){
     });
 }
 
+//show new lyrics for words based on if the previous input has been shown
 function showLyrics(){
     switch(verses){
         case 0:
@@ -266,6 +311,7 @@ function showLyrics(){
     }
 }
 
+//show new inputs for words based on if the previous verse has been shown
 function showInputs(){
     switch(input){
         case 0:
