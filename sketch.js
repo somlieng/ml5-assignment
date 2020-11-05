@@ -84,6 +84,38 @@ let verb5input;
 let verb5_value;
 let verb5Result;
 
+let adjective3input;
+let adj3_value;
+let adjective3Result;
+
+let noun7input;
+let noun7_value;
+let noun7Result;
+
+let nature1input;
+let nature1_value;
+let nature1Result;
+
+let nature2input;
+let nature2_value;
+let nature2Result;
+
+let humaninput;
+let human_value;
+let humanResult;
+
+let verb6input;
+let verb6_value;
+let verb6Result;
+
+let verb7input;
+let verb7_value;
+let verb7Result;
+
+let noun8input;
+let noun8_value;
+let noun8Result;
+
 //Divs for song lyrics
 let songLyrics;
 let intro;
@@ -201,6 +233,15 @@ function bohemianRhapsody(){
     calcWord(noun6_value,noun6Result);
     calcWord(verb5_value,verb5Result);
     
+    calcWord(adj3_value,adjective3Result);
+    calcWord(noun7_value,noun7Result);
+    calcWord(nature1_value,nature1Result);
+    calcWord(nature2_value,nature2Result);
+    calcWord(human_value,humanResult);
+    calcWord(verb6_value,verb6Result);
+    calcWord(verb7_value,verb7Result);
+    calcWord(noun8_value,noun8Result);
+    
     showLyrics();
 }
 
@@ -287,6 +328,38 @@ function initializeDOM(){
     verb5input = select('#die');
     verb5_value = verb5input.value();
     verb5Result = select('#verb5');
+    
+    adjective3input = select('#little');
+    adj3_value = adjective3input.value();
+    adjective3Result = select('#adj3');
+
+    noun7input = select('#silhouetto');
+    noun7_value = noun7input.value();
+    noun7Result = select('#noun7');
+
+    nature1input = select('#thunderbolt');
+    nature1_value = nature1input.value();
+    nature1Result = select('#nature1');
+
+    nature2input = select('#lightning');
+    nature2_value = nature2input.value();
+    nature2Result = select('#nature2');
+    
+    humaninput = select('#boy2');
+    human_value = humaninput.value();
+    humanResult = select('#human');
+
+    verb6input = select('#loves');
+    verb6_value = verb6input.value();
+    verb6Result = select('#verb6');
+
+    verb7input = select('#spare');
+    verb7_value = verb7input.value();
+    verb7Result = select('#verb7');
+
+    noun8input = select('#devil');
+    noun8_value = noun8input.value();
+    noun8Result = select('#noun8');
 }
 
 function calcWord(input,output){
