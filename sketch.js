@@ -272,17 +272,17 @@ async function bohemianRhapsody(){
     calcWord(disaster_value,disasterResult);
     disaster_list = await listWord(disaster_value);
     calcWord(verb1_value,verb1Result);
-    verb1_list = await listWord(verb1_value);
+//    verb1_list = await listWord(verb1_value);
     calcWord(noun2_value,noun2Result);
-    noun2_list = await listWord(noun2_value);
+//    noun2_list = await listWord(noun2_value);
     calcWord(organ_value,organResult);
-    organ_list = await listWord(organ_value);
+//    organ_list = await listWord(organ_value);
     calcWord(adj2_value,adjective2Result);
-    adj2_list = await listWord(adj2_value);
+//    adj2_list = await listWord(adj2_value);
     calcWord(noun3_value,noun3Result);
-    noun3_list = await listWord(noun3_value);
+//    noun3_list = await listWord(noun3_value);
     calcWord(noun4_value,noun4Result);
-    noun4_list = await listWord(noun4_value);
+//    noun4_list = await listWord(noun4_value);
     
     calcWord(familyMember_value,familyMember1Result);
     calcWord(familyMember_value,familyMember2Result);
@@ -318,6 +318,83 @@ async function bohemianRhapsody(){
     
     showLyrics();
     tooltip();
+    
+//        initializeDOM();
+//    
+//    calcWord(adj1_value,adjective1Result);
+//    adj1_list = await listWord(adj1_value);
+//    calcWord(noun1_value,noun1Result);
+//    noun1_list = await listWord(noun1_value);
+//    calcWord(disaster_value,disasterResult);
+//    disaster_list = await listWord(disaster_value);
+//    calcWord(verb1_value,verb1Result);
+//    verb1_list = await listWord(verb1_value);
+//    calcWord(noun2_value,noun2Result);
+////    noun2_list = await listWord(noun2_value);
+//    calcWord(organ_value,organResult);
+////    organ_list = await listWord(organ_value);
+//    calcWord(adj2_value,adjective2Result);
+////    adj2_list = await listWord(adj2_value);
+//    calcWord(noun3_value,noun3Result);
+////    noun3_list = await listWord(noun3_value);
+//    calcWord(noun4_value,noun4Result);
+////    noun4_list = await listWord(noun4_value);
+//    
+//    calcWord(familyMember_value,familyMember1Result);
+//    calcWord(familyMember_value,familyMember2Result);
+//    calcWord(familyMember_value,familyMember3Result);
+////    family_list = await listWord(familyMember_value);
+//    calcWord(noun5_value,noun5Result);
+////    noun5_list = await listWord(noun5_value);
+//    calcWord(bodypart_value,bodypartResult);
+////    bodypart_list = await listWord(bodypart_value);
+//    calcWord(verb2_value,verb2Result);
+////    verb2_list = await listWord(verb2_value);
+//    calcWord(carry_value,carryResult1);
+//    calcWord(carry_value,carryResult2);
+////    carry_list = await listWord(carry_value);
+//    
+//    calcWord(verb3_value,verb3Result);
+////    verb3_list = await listWord(verb3_value);
+//    calcWord(bodypart2_value,bodypart2Result);
+////    bodypart2_list = await listWord(bodypart2_value);
+//    calcWord(verb4_value,verb4Result);
+////    verb4_list = await listWord(verb4_value);
+//    calcWord(noun6_value,noun6Result);
+////    noun6_list = await listWord(noun6_value);
+//    calcWord(verb5_value,verb5Result);
+////    verb5_list = await listWord(verb5_value);
+//    
+//    calcWord(adj3_value,adjective3Result);
+////    adj3_list = await listWord(adj3_value);
+//    calcWord(noun7_value,noun7Result);
+////    noun7_list = await listWord(noun7_value);
+//    calcWord(nature1_value,nature1Result);
+////    nature1_list = await listWord(nature1_value);
+//    calcWord(nature2_value,nature2Result);
+////    nature2_list = await listWord(nature2_value);
+//    calcWord(human_value,humanResult);
+////    human_list = await listWord(human_value);
+//    calcWord(verb6_value,verb6Result);
+////    verb6_list = await listWord(verb6_value);
+//    calcWord(verb7_value,verb7Result);
+////    verb7_list = await listWord(verb7_value);
+//    calcWord(noun8_value,noun8Result);
+////    noun8_list = await listWord(noun8_value);
+//    
+//    calcWord(verb8_value,verb8Result);
+////    verb8_list = await listWord(verb8_value);
+//    calcWord(verb9_value,verb9Result);
+////    verb9_list = await listWord(verb9_value);
+//    calcWord(verb10_value,verb10Result);
+////    verb10_list = await listWord(verb10_value);
+//    calcWord(verb11_value,verb11Result);
+////    verb11_list = await listWord(verb11_value);
+//    
+//    calcWord(noun9_value,noun9Result);
+////    noun9_list = await listWord(noun9_value);
+//    calcWord(verb12_value,verb12Result);
+////    verb12_list = await listWord(verb12_value);
     
 }
 
@@ -501,13 +578,18 @@ function calcWord(input,output){
 }
 
 async function listWord(input){ 
-    let list = await word2Vec.nearest(input);
     let output = '';
-    
-    for(let word of list){
-        output += word.word+'<br>';
+    let list = await word2Vec.nearest(input);
+//    print(list);
+    if(list === null){
+        return output = '[Try another word]';
+    }else{
+        for(let word of list){
+            output += word.word+'<br>';
+            }
+        return output;
     }
-    return output;
+    
 }
 
 //show new lyrics for words based on if the previous input has been shown
