@@ -181,6 +181,11 @@ let verse2;
 let verse3;
 let verse4;
 let outro;
+let verse1line;
+let verse2line;
+let verse3line;
+let verse4line;
+let verse5line;
 
 //Divs for input
 let verse1Input;
@@ -214,6 +219,21 @@ function preload(){
     
     outroInput = select('#outroInput');
     outroInput.hide();
+    
+    verse1line = select('#verse1line');
+    verse1line.hide();
+    
+    verse2line = select('#verse2line');
+    verse2line.hide();
+    
+    verse3line = select('#verse3line');
+    verse3line.hide();
+    
+    verse4line = select('#verse4line');
+    verse4line.hide();
+    
+    verse5line = select('#verse5line');
+    verse5line.hide();
     
     intro = select('#intro');
     intro.hide();
@@ -661,6 +681,7 @@ function showInputs(){
     switch(input){
         case 0:
             verse1Input.show();
+            verse1line.show();
             input++;
             verseShowing = false;
             inputShowing = true;
@@ -668,6 +689,7 @@ function showInputs(){
         case 1:
             if(verseShowing === true){
                 verse2Input.show();
+                verse2line.show();
                 verseShowing = false;
                 inputShowing = true;
                 input++;
@@ -677,6 +699,7 @@ function showInputs(){
         case 2:
             if(verseShowing === true){
                 verse3Input.show();
+                verse3line.show();
                 verseShowing = false;
                 inputShowing = true;
                 input++;
@@ -686,6 +709,7 @@ function showInputs(){
         case 3:
             if(verseShowing === true){
                 verse4Input.show();
+                verse4line.show();
                 verseShowing = false;
                 inputShowing = true;
                 input++;
@@ -695,6 +719,7 @@ function showInputs(){
         case 4:
             if(verseShowing === true){
                 outroInput.show();
+                verse5line.show();
                 verseShowing = false;
                 inputShowing = true;
                 break;

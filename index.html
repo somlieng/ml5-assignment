@@ -11,19 +11,24 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <meta charset="utf-8" />
   </head>
   <body>
-      <h1>Telephone Bohemian Rhapsody</h1>
-      <h3>What if you whispered Bohemian Rhapsody to a computer? Type in the word the computer should listen for and see what the computer hears instead!</h3>
-      <h4>Hover over the highlighted words to see what other words the computer thought it could have been.</h4>
-      <p id='status'>Loading computer ears...</p>
+      <div class = 'container'>
+      <h1>Telephone "Bohemian Rhapsody" by Queen to a computer</h1>
+      <p>What if you whispered Bohemian Rhapsody to a computer? Type in the word the computer should listen for and see what the computer hears instead!</p>
+      <p>Hover over the highlighted words to see what other words the computer thought it could have been.</p>
+      <h5 id='status'>Loading computer ears...</h5>
+      
+      <div class="divider"></div>
       
       <!--Intro container-->
-      <div class="container">  
+      <div class="row">  
           
-          <div id='introInput'>
-                <h4>Intro</h4>
+          <div class = '' id='introInput'>
+                <h5>Intro</h5>
                 <p>
                 Adjective: 
                   <input type="text" value="real" id="real"/>
@@ -62,8 +67,8 @@
                 </p>
           </div>
           
-          <div id='intro'>
-            <h3>
+          <div class = '' id='intro'>
+            <h5>
               [Intro]<br>
               Is this the <span id="adj1" class="madlib"></span> <span id="noun1"class="madlib"></span>? Is this just fantasy<br>
               Caught in a <span id="natrual-disaster" class="madlib"></span>, no <span id="verb1" class="madlib"></span> from <span id="noun2"class="madlib"></span><br>
@@ -71,16 +76,18 @@
               I'm just a <span id="adj2" class="madlib"></span> <span id="noun3"class="madlib"></span>, I need no sympathy<br>
               Because I'm easy come, easy go, little high, little low<br>
               Any way the <span id="noun4"class="madlib"></span> blows doesn't really matter to me, to me<br><br>  
-            </h3>
+            </h5>
           </div>
           
         </div>
+          
+        <div class="divider" id='verse1line'></div>
       
         <!--Verse 1 container-->
-        <div class="container">
+        <div class="row">
             
             <div id='verse1Input'>
-                <h4>Verse 1</h4>
+                <h5>Verse 1</h5>
                 <p>
                 Family member: 
                   <input type="text" value="Mama" id="mama"/>
@@ -104,7 +111,7 @@
             </div>
             
             <div id='verse1'>
-            <h3>
+            <h5>
               [Verse 1]<br>
               <span id="family1"class="madlib"></span>, just killed a man<br>
               Put a <span id="noun5"class="madlib"></span> against his <span id="bodypart"class="madlib"></span>, pulled my trigger, now he's dead<br>
@@ -113,16 +120,18 @@
               <span id="family3"class="madlib"></span>, ooh, didn't mean to make you cry<br>
               If I'm not back again this time tomorrow<br>
               <span id="carry1"class="madlib"></span> on, <span id="carry2"class="madlib"></span> on as if nothing really matters<br><br>
-            </h3>
+            </h5>
           </div>
         
-        </div> 
+        </div>
+        
+        <div class="divider" id='verse2line'></div>
       
         <!--Verse 2 container-->
-        <div class="container">
+        <div class="row">
             
             <div id='verse2Input'>
-                <h4>Verse 2</h4>
+                <h5>Verse 2</h5>
                 <p>
                 Verb: 
                   <input type="text" value="shivers" id="shivers"/>
@@ -146,7 +155,7 @@
             </div>
             
             <div id='verse2'>
-            <h3>
+            <h5>
               [Verse 2]<br>
               Too late, my time has come<br>
               Sends <span id="verb3" class="madlib"></span> down my <span id="bodypart2"class="madlib"></span>, body's aching all the time<br>
@@ -155,16 +164,18 @@
               Mama, ooh (Any way the wind blows)<br>
               I don't wanna <span id="verb5" class="madlib"></span><br>
               I sometimes wish I'd never been born at all<br><br>
-            </h3>
+            </h5>
           </div>
             
         </div>
+          
+        <div class="divider" id='verse3line'></div>
       
         <!--Verse 3 container-->
-        <div class="container">
+        <div class="row">
             
             <div id='verse3Input'>
-                <h4>Verse 3</h4>
+                <h5>Verse 3</h5>
                 <p>
                 Adjective: 
                   <input type="text" value="little" id="little"/>
@@ -200,7 +211,7 @@
             </div>
             
             <div id='verse3'>
-            <h3>
+            <h5>
               [Verse 3]<br>
               I see a <span id="adj3" class="madlib"></span> <span id="noun7"class="madlib"></span> of a man<br>
               Scaramouche, Scaramouche, will you do the Fandango?<br>
@@ -219,16 +230,18 @@
               No, no, no, no, no, no, no<br>
               (Oh, mamma mia, mamma mia) Mamma mia, let me go<br>
               Beelzebub has a <span id="noun8"class="madlib"></span> put aside for me, for me, for me!<br><br>
-            </h3>
+            </h5>
           </div>
             
         </div>
+          
+        <div class="divider" id='verse4line'></div>
       
         <!--Verse 4 container-->
-        <div class="container">
+        <div class="row">
         
             <div id='verse4Input'>
-                <h4>Verse 4</h4>
+                <h5>Verse 4</h5>
                 <p>
                 Verb: 
                   <input type="text" value="stone" id="stone"/>
@@ -248,22 +261,24 @@
             </div>
             
             <div id='verse4'>
-            <h3>
+            <h5>
               [Verse 4]<br>
               So you think you can <span id="verb8" class="madlib"></span> me and <span id="verb9" class="madlib"></span> in my eye?<br>
               So you think you can <span id="verb10" class="madlib"></span> me and <span id="verb11" class="madlib"></span> me to die?<br>
               Oh, baby, can't do this to me, baby!<br>
               Just gotta get out, just gotta get right outta here<br><br>
-            </h3>
+            </h5>
           </div>
             
         </div>
+          
+        <div class="divider" id='verse5line'></div>
       
         <!--Verse 5 container-->
-        <div class="container">
+        <div class="row">
             
             <div id='outroInput'>
-                <h4>Outro</h4>
+                <h5>Outro</h5>
                 <p>
                 Noun: 
                   <input type="text" value="wind" id="wind2"/>
@@ -275,7 +290,7 @@
             </div>
             
             <div id='outro'>
-            <h3>
+            <h5>
               [Outro]<br>
               (Ooh)<br>
               (Ooh, yeah, ooh, yeah)<br>
@@ -283,27 +298,21 @@
               Nothing really matters<br>
               Nothing really matters to me<br>
               Any way the <span id="noun9"class="madlib"></span> <span id="verb12" class="madlib"></span><br>
-            </h3>
+            </h5>
           </div>
             
         </div>
           
-          
-        <button id="submit" class="btn btn-primary">Make Freddie Mercury Proud</button>
-        <button id="moreInputs" class="btn btn-primary">Click here to do next verse</button>
+        <div class="row">
+            <button id="submit" class="btn btn-primary">Make Freddie Mercury Proud</button>
+            <button id="moreInputs" class="btn btn-primary">Click here to do next verse</button>
+        </div>  
   
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="https://unpkg.com/tippy.js@6"></script>
   <script src="sketch.js"></script>
       
-<!--
-    <script>
-      tippy('#adj1', {
-        content: 'Tooltip test',
-      });
-    </script>
--->
-
+</div>
 </body>
 
 </html>

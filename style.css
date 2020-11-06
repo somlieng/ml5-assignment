@@ -8,15 +8,16 @@ html{
 
 body{
     background-color:white;
-    padding:20px;
 }
 
 canvas {
   display: block;
 }
 
-.container {
+.row {
     display: flex;
+    gap: 40px;
+    margin-top: 20px;
 }
 
 .madlib {
@@ -29,6 +30,10 @@ canvas {
   font-size: 16px;
 }
 
-h1,h3,h4,p,input{
+h1,h3,h4,h5,p,input{
   font-family: 'Space Grotesk', sans-serif;
+}
+
+h1{
+  font-size: 48px;
 }
