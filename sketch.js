@@ -218,7 +218,6 @@ function setup() {
     //button press function
     fillLyrics(submitButton);
     showMoreInputs(showButton);
-    tooltip();
     
 }
 
@@ -278,11 +277,24 @@ function bohemianRhapsody(){
     calcWord(verb12_value,verb12Result);
     
     showLyrics();
+    tooltip();
     
 }
 
 function tooltip(){
     tippyHelper('#adj1',adj1_value);
+    tippyHelper('#noun1',noun1_value);
+    tippyHelper('#natrual-disaster',disaster_value);
+    tippyHelper('#verb1',verb1_value);
+    tippyHelper('#noun2',noun2_value);
+    tippyHelper('#organ',organ_value);
+    tippyHelper('#adj2',adj2_value);
+    tippyHelper('#noun3',noun3_value);
+    tippyHelper('#noun4',noun4_value);
+    tippyHelper('#family1',familyMember_value);
+    tippyHelper('#family2',familyMember_value);
+    tippyHelper('#family3',familyMember_value);
+    //tippyHelper('#',);
 }
 
 function tippyHelper(hover,word){
