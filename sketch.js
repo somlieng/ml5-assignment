@@ -235,6 +235,7 @@ function bohemianRhapsody(){
     initializeDOM();
     
     calcWord(adj1_value,adjective1Result);
+//    listWord(adj1_value,adj1_list);
     calcWord(noun1_value,noun1Result);
     calcWord(disaster_value,disasterResult);
     calcWord(verb1_value,verb1Result);
@@ -281,15 +282,13 @@ function bohemianRhapsody(){
 }
 
 function tooltip(){
-//    tippy('#adj1', {
-//        content: adj1_value,
-//      });
     tippyHelper('#adj1',adj1_value);
 }
 
 function tippyHelper(hover,word){
     tippy(hover, {
         content: word,
+        placement: 'top',
       });
 }
 
@@ -444,6 +443,20 @@ function calcWord(input,output){
         word = '[Try another word]';
       }
       output.html(word);
+    });
+}
+
+function listWord(input,output){
+    let list = '';
+    word2Vec.nearest(input, (error, result) => {
+      if (result) {
+        for(let i=0;i<result.length;i++){
+            list += result[i].word+'<br>';
+        }
+      } else {
+        word = '[Try another word]';
+      }
+      output = list;
     });
 }
 

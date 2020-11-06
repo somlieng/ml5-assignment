@@ -22,3 +22,13 @@ canvas {
 .madlib {
     color: blue;
 }
+
+.tippy-content{
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+}
+
+h1,h3,h4,p{
+  font-family: 'Space Grotesk', sans-serif;
+}
